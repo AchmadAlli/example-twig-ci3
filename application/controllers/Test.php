@@ -1,11 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Test extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
 		$this->load->library('twig');
+		$this->load->model('Actor', 'actor');
 	}
 
 	/**
@@ -25,18 +26,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$datetime = filemtime('assets/js/main.js');
-		// 
-		// 
-		print_r(date('d-m-y h:i:s', '1634199127')); echo '<br>';
-		print_r(date('d-m-y h:i:s', '1634202662')); echo '<br>';
-		die();
-		$this->twig->getTwig()->addFilter(new \Twig\TwigFilter('getModified', [$this, 'test']));
-		$this->twig->display('welcome', ["title" => "Achmad Ali Baidlowi"]);
-	}
-
-	public function test($path)
-	{
-		return filemtime($path);
+		$result = $this->actor->getAll();
 	}
 }

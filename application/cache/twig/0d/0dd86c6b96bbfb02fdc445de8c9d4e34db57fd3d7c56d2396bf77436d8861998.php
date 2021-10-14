@@ -105,7 +105,7 @@ class __TwigTemplate_40633d32dc4c9464d0e9792092fd9c10bfb627b3d9b5bb23e7c02214d2d
 
 \t<div id=\"body\">
 \t\t<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
+    
 \t\t<p>If you would like to edit this page you'll find it located at:</p>
 \t\t<code>application/views/welcome_message.php</code>
 
@@ -118,6 +118,16 @@ class __TwigTemplate_40633d32dc4c9464d0e9792092fd9c10bfb627b3d9b5bb23e7c02214d2d
 \t<p class=\"footer\">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
+";
+        // line 86
+        $context["path"] = "assets/js/main.js";
+        echo " 
+<script src=\"";
+        // line 87
+        echo twig_escape_filter($this->env, ($context["path"] ?? null), "html", null, true);
+        echo "?token=";
+        echo twig_escape_filter($this->env, call_user_func_array($this->env->getFilter('getModified')->getCallable(), [($context["path"] ?? null)]), "html", null, true);
+        echo "\"></script>
 </body>
 </html>";
     }
@@ -134,7 +144,7 @@ class __TwigTemplate_40633d32dc4c9464d0e9792092fd9c10bfb627b3d9b5bb23e7c02214d2d
 
     public function getDebugInfo()
     {
-        return array (  103 => 69,  36 => 5,  30 => 1,);
+        return array (  127 => 87,  123 => 86,  103 => 69,  36 => 5,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -219,7 +229,7 @@ class __TwigTemplate_40633d32dc4c9464d0e9792092fd9c10bfb627b3d9b5bb23e7c02214d2d
 
 \t<div id=\"body\">
 \t\t<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
+    
 \t\t<p>If you would like to edit this page you'll find it located at:</p>
 \t\t<code>application/views/welcome_message.php</code>
 
@@ -232,6 +242,8 @@ class __TwigTemplate_40633d32dc4c9464d0e9792092fd9c10bfb627b3d9b5bb23e7c02214d2d
 \t<p class=\"footer\">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
+{% set path = 'assets/js/main.js' %} 
+<script src=\"{{path}}?token={{ path | getModified }}\"></script>
 </body>
 </html>", "welcome.twig", "/media/bill-gates/slave/Projects/Personal/example-twig-ci3/application/views/welcome.twig");
     }
